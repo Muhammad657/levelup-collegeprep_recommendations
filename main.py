@@ -1,3 +1,4 @@
+
 from flask import Flask, jsonify, request
 import requests
 import os
@@ -124,7 +125,7 @@ And always remember to be specific in every recommendation. Dont give the user t
 `And also put a comma between the set of skills you give like for eg, in the example:  Programming Engineering Teamwork you would display it as Programming, Engineering, Teamwork
 
 
-AND MOST IMPORTANTLY EVERYTHING U GIVE SHOULD BE THE UI / HTML, NO OTHER RESPONSE BUT DONT PUT LIKE A "'''HTML" IN FRONT OF THE ACUTAL HTML THAT'S NOT NEEDED, JUST THE PURE HTML MAN AND REMEMBER TO NOT PUT LIKE !DOCTPYE IN THE BEGINNING, IT SHOULD JUST BE BASED ON WHAT THE EXAMPLE SAYS NOT LIKE FROMT HE START PLEASEEE, DONT DO LIKE <HTML> OR <BODY>, JUST STRAIGT UP <div> SO U CAN START WITH A BIG CONATINER AND THEN AD MORE CARDS IN IT. please follow this
+AND MOST IMPORTANTLY EVERYTHING U GIVE SHOULD BE THE UI / HTML, NO OTHER RESPONSE BUT DONT PUT LIKE A "'''HTML" IN FRONT OF THE ACUTAL HTML THAT'S NOT NEEDED, JUST THE PURE HTML MAN.
 
 AND AGAIN IM TELLING U DONT PROVIDE ANYTHING EXCEPT FOR THE HTML NO TEXT NOTHING. EVEN IF U WERNET ABLE TO ACCESS REAL TIME DATA, DONT MENTION THAT TO THE USER
 
@@ -193,4 +194,5 @@ def run_ecrecommender():
     return jsonify({"reply": html})
 
 if __name__ == '__main__':
-    server.run(host='0.0.0.0', port=8000, debug=True)
+    port = int(os.environ.get("PORT", 8000))
+    server.run(host='0.0.0.0', port=port)
